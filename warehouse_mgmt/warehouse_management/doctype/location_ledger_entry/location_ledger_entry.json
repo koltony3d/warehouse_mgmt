@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "hash",
+ "creation": "2026-06-26 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "item_name",
+  "storage_location",
+  "warehouse",
+  "qty",
+  "batch_no",
+  "serial_no",
+  "posting_date",
+  "posting_time",
+  "voucher_type",
+  "voucher_no"
+ ],
+ "fields": [
+  {"fieldname": "item", "fieldtype": "Link", "options": "Item", "label": "פריט", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+  {"fieldname": "item_name", "fieldtype": "Data", "label": "שם פריט", "fetch_from": "item.item_name", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "storage_location", "fieldtype": "Link", "options": "Storage Location", "label": "מיקום אחסון", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+  {"fieldname": "warehouse", "fieldtype": "Link", "options": "Warehouse", "label": "מחסן", "fetch_from": "storage_location.warehouse", "read_only": 1, "in_standard_filter": 1},
+  {"fieldname": "qty", "fieldtype": "Float", "label": "כמות", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "batch_no", "fieldtype": "Link", "options": "Batch", "label": "אצווה"},
+  {"fieldname": "serial_no", "fieldtype": "Data", "label": "מספר סידורי"},
+  {"fieldname": "posting_date", "fieldtype": "Date", "label": "תאריך", "in_list_view": 1},
+  {"fieldname": "posting_time", "fieldtype": "Time", "label": "שעה"},
+  {"fieldname": "voucher_type", "fieldtype": "Data", "label": "סוג מסמך מקור", "read_only": 1},
+  {"fieldname": "voucher_no", "fieldtype": "Data", "label": "מסמך מקור", "read_only": 1, "in_standard_filter": 1}
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-26 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Warehouse Management",
+ "name": "Location Ledger Entry",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Stock Manager", "share": 1, "write": 1},
+  {"read": 1, "report": 1, "role": "Stock User"}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}
